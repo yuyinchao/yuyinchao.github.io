@@ -1,0 +1,52 @@
+body{
+	background-color: deepskyblue;
+}
+.from{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	background-color: #fff;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	text-align: center;
+}
+.from h3{
+	text-align: center;
+}
+.from input:not([type="submit"]){
+	width:75%;
+	height:30px;
+	margin:10px 0;
+	border: 1px dashed lightblue;
+	outline: none;
+	text-indent: 1em;
+	transition:all .5s;
+}
+.from #submit{
+	width:40%;
+	height: 40px;
+	position: absolute;
+	border: none;
+	bottom: -30px;
+	left:30%;
+	right:30%;
+	letter-spacing:0;
+	margin:10px 0;
+	background-color: rgba(50,50,100,.9);
+	color:#fff;
+	box-shadow: 0px 3px rgba(50,50,100,.5), 1px 1px 4px 0 rgba(0,0,0,.5);
+	cursor: pointer;
+	font-size: .8em;
+	transition:all .5s;
+}
+.from input:not([type="submit"]):hover{
+	border: 1px solid lightblue;
+	box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.5);
+}
+.from #submit:hover{
+	letter-spacing: 5px;
+	background-color: #333;
+}
