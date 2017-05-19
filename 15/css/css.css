@@ -1,0 +1,67 @@
+/*
+ 先全局，再局部
+ 先上后下
+ * */
+/*
+ 全局的设置，同样的代码
+ * */
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+body{
+	color: #fff;
+	background: url(../img/pexels-photo-248797.jpeg) center top fixed;
+	background-size:  cover;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+body header a h1{
+	display: none;
+}
+body header a img{
+	width: 150px;
+	height: auto;
+}
+.mainNav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.mainNav ul li{
+	float: left;
+	margin: 20px 30px;
+}
+.mainNav ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 20px;
+	border: 1px solid transparent;
+	transition: color .5s,border .5s;
+}
+.mainNav ul li a:hover{
+	color: #000;
+	border: 1px solid #fff;
+}
+header{
+	max-width: 1200px;
+	margin:30px auto;
+	position: relative;
+}
+
+header nav{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+header nav ul li{
+	float: left;
+	margin: 20px 30px;
+}
