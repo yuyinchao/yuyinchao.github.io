@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>个人主页实现</title>	
+		<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			 <a href="index.html class="logo">
+			 	<h1>个人主页</h1>
+				<img src="img/logo.svg" alt="" />
+			</a>
+			<a id="0"></a>
+			<div class="mainNav">
+				<ul class="clearfix">
+					<li><a href="#1">关于</a></li>
+					<li><a href="#2">工作</a></li>
+					<li><a href="#3">联系</a></li>
+				</ul>
+			</div>
+			<h2>Hello!I'm Rye.</h2>
+			<p>aqegdasjgfau</p>
+			<p>sgzsjg</p>
+		</header>
+		<tbody>
+			<a id="1"></a>
+			<h2>兴趣爱好</h2>
+			<ul class="fav clearfix">
+				<li><a herf="#">HTML</a></li>
+				<li><a herf="#">Java</a></li>
+				<li><a herf="#">Linux</a></li>
+				<li><a herf="#">Ps</a></li>
+				<li><a herf="#">Ae</a></li>
+				<li><a herf="#">Pr</a></li>
+			</ul>
+			<a id="2"></a>
+			<h2>项目展示</h2>
+			<div class="work clearfix">
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+				<figure>
+					<figcaption>代表项目</figcaption>
+					<img src="img/timg.jpg" alt="" />
+				</figure>
+			</div>
+			<a id="3"></a>
+			<h2>联系我们</h2>
+			<p>期待一同探索</p>
+			<dl>
+				<dt>e-mail</dt>
+				<dd>2481305996@qq.com</dd>
+				<dt>QQ</dt>
+				<dd>2481305996</dd>
+			</dl>
+			<div class="contact">
+		 		<input type="text" name="name" id="name" placeholder="名字" />
+		 		<input type="email" name="mail" id="mail" placeholder="邮箱">
+		 		<select name="fav" id="fav">
+					<option value="0">兴趣</option>
+					<option value="1">网页开发</option>  			
+					<option value="2">html5开发</option>
+					<option value="3">摄影</option>
+					<option value="4">后期制作</option>
+					<option value="5">其他</option>
+				</select>
+				<textarea name="message" id="message" placeholder="留言"></textarea>
+				<input type="submit" name="submit" id="submit" value="提交信息"/>
+		 	</div>
+		 	<a href="#0" title="返回顶部" id="toTop" class="clearfix top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+		</tbody>
+		<tfoot>
+			<p>&copy;余银超版权所有，如有雷同，十分感谢</p>
+		</tfoot>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('header a').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500);
+				});
+				$('#goTop').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: 0}, 500);
+				});
+			});
+		</script>
+	</body>
+</html>
