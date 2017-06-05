@@ -1,0 +1,200 @@
+*{
+	box-sizing: border-box;
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.container{
+	max-width: 1200px;
+	margin: auto;
+	padding: 1px;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+h2,h3{
+	font-family: "微软雅黑";
+}
+header{
+	position: fixed;
+	width: 100%;
+	z-index: 2333;
+	top: 0;
+	padding: 15px 0px;
+}
+header.on{
+	background-color: rgba(0,0,0,.6);
+	padding: 5px 0px;
+}
+header .logo{
+	float: left;
+}
+.logo img,
+.logo span{	
+	vertical-align: middle;	
+}
+.logo img{
+	font-size:2em;
+	margin: 0px 0px 0px 20px;
+}
+.logo span{
+	font-size: 3.5em;
+}
+header .topMenu{
+	float: right;
+	margin-bottom: 0;
+}
+.topMenu ul{
+	margin: 0;
+}
+.topMenu ul li{
+	float: left;
+	margin: 20px 30px;
+}
+.topMenu ul li a{
+	text-shadow: 1px 1px 1px rgba(1,1,1,.5);
+	transition: color .5s;
+	font-family: "微软雅黑";
+}
+.topMenu ul li.active a,
+.topMenu ul li:hover a{
+	color: dodgerblue;
+}
+section{
+	line-height: 2;
+	min-height: 400px;
+	padding: 40px;
+}
+.banner{
+	min-height: 650px;
+	background: url(../img/banner.jpg) no-repeat center top;
+	background-size: cover;
+}
+.banner .container{
+	color: #FFFFFF;
+	position: absolute;
+	height: 200px;
+	width: 780px;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+.banner .container h1{
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.5);	
+}
+.banner .container h1 em{
+	font-style: normal;
+	color: dodgerblue;
+}
+.banner .container p{
+	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	font-family: "微软雅黑";
+}
+.banner .container p em{
+	font-style: normal;
+	color: #000000;
+	line-height: 1.8;
+	background-color: rgba(255,255,255,.5);
+	padding: 4px;
+}
+section h2{
+	text-align: center;
+	margin-top: 0;
+}
+section h2+p{
+	text-align: center;
+	margin-bottom: 50px;
+}
+section:nth-child(2n-1){
+	color: #FFFFFF;
+}
+.about img{
+	float: left;
+	width: 48%;
+}
+.about .note{
+	float: right;
+	width: 48%;
+}
+.about .note p:first-child{
+	margin-top: 0;
+}
+.about ol{
+	list-style: none;
+	padding: 0;
+	counter-reset:testname 0;
+}
+.about .note li{
+	counter-increment:testname 1;
+	position: relative;
+	padding-left: 2em;
+	cursor: pointer;
+	list-style: none;
+}
+.about .note li::before{
+	content:counter(testname);
+	width: 1.2em;
+	height: 1.2em;
+	border: 1px dashed #000;
+	text-align: center;
+	line-height: 1.2;
+	border-radius: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0.3em;
+	transition:transform .5s;
+	transform: translate(0px);
+}
+.about .note li:hover::before{
+	transform: translate(0.5em);
+}
+.service{
+	background: url(../img/banner2.jpg) no-repeat center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+.service ul{
+	margin-top: 0;	
+}
+.service li::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.service li{
+	float: left;
+	width: 48%;
+	min-height: 135px;
+	margin: 20px 0;
+	text-align: right;
+}
+.service li:nth-child(2n){
+	float: right;
+	text-align: left;
+}
+.service li i{
+	float: right;
+	padding: 10px 0px 5px 30px;
+	transition: transform .5s;
+}
+.service li:hover i{
+	color: dodgerblue;
+	transform: scale(1.2) rotate(5deg);
+}
+.service li:nth-child(2n) i{
+	float: left;
+	padding: 10px 30px 5px 0px;
+}
+.service li h3{
+	display: inline-block;
+	margin: 0;
+}
+
