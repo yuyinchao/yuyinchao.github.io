@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#banner {
+				width: 800px;
+				height: 600px;
+				margin: auto;
+				text-align: -999em;
+				transition: all .4s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="banner"></div>
+		<script type="text/javascript">
+			var num = 0; //定义一个计数器
+			var t = num;
+			var zStr = "1.jpg|2.jpg|3.jpg"; //存储图片
+			var imgStr = zStr.split("|"); //将图片单独分开
+			var oBanner = document.getElementById("banner");
+			oBanner.style.backgroundImage = "url(img/" + imgStr[num] + ")"; //先执行一次图片切换
+
+			//图片切换函数
+			function ImgChange() {
+				//				num = parseInt(Math.random() * 3);
+				num = parseInt(Math.random() * 3);
+				for(var i;; i++) {
+					if(num == t) {
+						num = parseInt(Math.random() * 3);
+					} else {
+						oBanner.style.backgroundImage = "url(img/" + imgStr[num] + ")";
+						t = num;
+						break;
+					}
+				}
+
+				//				console.log(num);
+			}
+			//每隔3s进行一次切换
+			setInterval("ImgChange()", 1500);
+		</script>
+	</body>
+
+</html>
