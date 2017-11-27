@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>模拟窗口</title>
+	</head>
+	<style>
+		#mask{
+			width: 100%;
+			height: 100%;
+			background-color: lightskyblue;
+			position: fixed;
+			z-index: 999;
+			opacity: 0.6;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		#loginbox{
+			position: absolute;
+			background-color: #fff;
+			top: 35%;
+			left: 35%;
+			width: 30%;
+			height: 20%;
+			border: 1px solid mediumblue;
+			z-index: 1000;
+			border-radius: 5px;
+			display: none;
+		}
+		#title p,
+		#title a{
+			display: inline-block;
+			font-size: 15px;
+			font-weight: bold;
+			
+		}
+		#title p{
+			float: left;
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+		#title a{
+			text-decoration: none;
+			color: #000000;
+			float: right;
+			margin-top: 20px;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+		#loginbox button{
+			color: #000000;
+			position: fixed;
+			float: right;
+			margin-top: 10px;
+			margin-right: 20px;
+			cursor: pointer;
+		}
+		#title a:hover{
+			color: dodgerblue;
+			transition: 0.5s;
+		}
+	</style>
+	<body>
+		<button id="btn" onclick="a()">模拟框</button>
+		<div id="mask"></div>
+		<div id="loginbox">
+			<div id="title">
+				<p><a href="http://css.doyoe.com/">css手册</a></p>								
+			</div>
+			<button id="colse" >关闭</button>
+		</div>
+		<script>
+			var mask=document.getElementById("mask");
+			var loginbox=document.getElementById("loginbox");
+			var close=document.getElementById("colse");
+			
+			function a(){
+				mask.style="display:block";
+				loginbox.style="display:block";
+				
+			}
+			close.onclick=function(){
+				mask.style="display:none";
+				loginbox.style="display:none";
+				
+			};
+		
+		</script>
+	</body>
+</html>
