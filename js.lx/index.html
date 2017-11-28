@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="css/css.css" rel="stylesheet">
+		<title></title>
+	</head>
+
+	<body>
+
+		<div class='bar-menu'>
+			<div class="hamburger"><i class="fa fa-bars button" id='button' aria-hidden="true"></i> 导航菜单</div>
+		</div>
+		<div class="side-menu" id='side-menu'>
+			<ul class='menu' id='menu'>
+				<li class='item'>
+					<a href="#" class='menu-item'>生活<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<ul class="submenu">
+						<li class='submenu-item'>健康</li>
+						<li class='submenu-item'>时尚</li>
+						<li class='submenu-item'>家居</li>
+					</ul>
+				</li>
+				<li class='item'>
+					<a href="#" class='menu-item'>娱乐<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<ul class="submenu">
+						<li class='submenu-item'>明星</li>
+						<li class='submenu-item'>综艺</li>
+						<li class='submenu-item'>音乐</li>
+					</ul>
+				</li>
+				<li class='item'>
+					<a href="#" class='menu-item'>游戏<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<ul class="submenu">
+						<li class='submenu-item'>英雄联盟</li>
+						<li class='submenu-item'>绝地求生</li>
+						<li class='submenu-item'>守望先锋</li>
+					</ul>
+				</li>
+				<li class='item'>
+					<a href="#" class='menu-item'>电影<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<ul class="submenu">
+						<li class='submenu-item'>雷神3</li>
+						<li class='submenu-item'>正义联盟</li>
+						<li class='submenu-item'>猩球崛起3</li>
+					</ul>
+				</li>
+				<li class='item'>
+					<a href="#" class='menu-item'>电视剧<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<ul class="submenu">
+						<li class='submenu-item'>猎场</li>
+						<li class='submenu-item'>急诊科医生</li>
+						<li class='submenu-item'>小美好</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var button = document.getElementById("button");
+			var sideMenu = document.getElementById("side-menu");
+			var menu = document.getElementById("menu");
+			var open = false;
+			var menuLink = document.getElementsByClassName("menu-item");
+			var item = document.getElementsByClassName("item");
+			var submenu = document.getElementsByClassName("submenu");
+			var arrow = document.getElementsByClassName("fa-angle-right");
+			button.onclick = function() {
+				button.style.transform = "rotate(90deg)";
+				if(open === false) {
+					open = true;
+					sideMenu.style.display = "block";
+				} else {
+					open = false;
+					button.style.transform = "none";
+					sideMenu.style.display = "none";
+				}
+			};
+			menu.addEventListener(
+				"click",
+				function(e) {
+					var p = e.target.parentElement;
+					console.log(p)
+					var index = Array.prototype.indexOf.call(p.children, e.target);
+					if(e.target.className === "item" || e.target.className === "item open") {
+						if(item[index].className === "item") {
+							item[index].className += " open";
+							submenu[index].style.display = "block";
+							arrow[index].style.transform = "rotate(90deg)";
+						} else {
+							item[index].className = "item";
+							submenu[index].style.display = "none";
+							arrow[index].style.transform = "none";
+						}
+					}
+				},
+				false
+			);
+		</script>
+	</body>
+
+</html>
