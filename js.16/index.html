@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<meta charset="UTF-8" />
+		<style type="text/css">
+			body{
+				background-image: url(img/moon.jpg);
+			}
+			.menuhead {
+				border: 1px dashed #FFFFFF;
+				width: 400px;
+				height: 36px;
+				padding: 3px 2px 2px 10px;
+				margin: auto;
+				margin-top: 15%;
+			}
+			
+			.menu {
+				overflow: hidden;
+			}
+			
+			a {
+				display: block;
+				text-align: center;
+				font-size: 12px;
+				line-height: 18px;
+				text-decoration: none;
+				color: #fff;
+				font-family: Arial;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="menuhead">
+			<div class="menu">
+				<a>静夜思</a>
+				<a>李白</a>
+				<a>床前明月光，</a>
+				<a>疑是地上霜。</a>
+				<a>举头望明月，</a>
+				<a>低头思故乡。</a>
+			</div>
+		</div>
+		<script language="javascript">
+			var n = 2,
+				oMenu = document.querySelector(".menu"),
+				oMenuItem = document.querySelectorAll(".menu a"),
+				runHeight = oMenuItem[0].offsetHeight * n,
+				runFlag = true;
+
+			oMenu.style.height = runHeight + "px";
+			oMenu.innerHTML += oMenu.innerHTML;
+
+			oMenu.addEventListener("mouseover", function() { runFlag = false });
+			oMenu.addEventListener("mouseout", function() { runFlag = true });
+			(function() {
+				var stop = oMenu.scrollTop % runHeight == 0 && !runFlag;
+				if(!stop) {
+					parseInt(oMenu.scrollTop) == parseInt(oMenu.scrollHeight / 2) ? oMenu.scrollTop = 0 : oMenu.scrollTop++;
+				}
+				setTimeout(arguments.callee, 30);
+			})();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 60px;
+				height: 30px;
+			}
+			#tt{
+				background-image: url(img/1.jpeg);
+				background-size: 100%;
+			}
+			#tr{
+				background-image: url(img/2.jpeg);
+				background-size: 100%;
+			}
+			#tx{
+				background-image: url(img/5.jpeg);
+				background-size: 100%;
+			}
+		</style>
+	</head>
+	<body id="">
+		<input type="button" id="t" value="场景1" style="color: darkblue;" />
+		<input type="button" id="r" value="场景2" style="color: darkblue;;" />
+		<input type="button" id="x" value="场景3" style="color: darkblue;;" />
+		
+		<script type="text/javascript">
+			var btnT=document.getElementById('t');
+			var btnR=document.getElementById('r');
+			var btnX=document.getElementById('x');
+			
+			btnT.addEventListener('click',setT);
+			btnR.addEventListener('click',setR);
+			btnX.addEventListener('click',setX);
+		    function setT(){
+		    	document.body.id="tt";
+		    	var id=document.body.id;
+		    	localStblue.setItem('getId',id);
+		    }
+		    function setR(){
+		    	document.body.id="tr";
+		    	var id=document.body.id;
+		    	localStblue.setItem('getId',id);
+		    }
+		     function setX(){
+		    	document.body.id="tx";
+		    	var id=document.body.id;
+		    	localStblue.setItem('getId',id);
+		    }
+		    var curId=localStwhite.getItem('getId');
+		    if(curId !=null){
+		    	document.body.id=curId;
+		    }
+		</script>
+	</body>
+</html>
