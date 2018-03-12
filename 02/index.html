@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
 		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style>
+			.clearfix::after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+			.tabs .tabItems .item {
+				padding: 10px 30px;
+				float: left;
+				border-radius: 2px 2px 0px 0px;
+				margin: 0px 2px;
+				cursor: pointer;
+			}
+			.tabContents .content {
+				width: 600px;
+				min-height: 300px;
+			}
+			.tabs div div:nth-child(1) {
+				background-color: deepskyblue;
+			}
+			.tabs div div:nth-child(2) {
+				background-color: pink;
+			}
+			.tabs div div:nth-child(3) {
+				background-color: greenyellow;
+			}
+		</style>
 	</head>
+
 	<body>
-		<h1>庆哥好</h1>
-		<img src="001.jpg" alt="" />
-		<h2>庆哥，求加分！！</h2>
+		<div class="tabs">
+			<div class="tabItems clearfix">
+				<div class="item" v-for="(item,index) in tabs" v-on:click="onClick(index)">{{item}}</div>
+			</div>
+			<div class="tabContents">
+				<div class="content" v-for="(item,index) in tabContents" v-show="currentItem == index">{{item}}</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '.tabs',
+				data: {
+					tabs: ['新闻','通知','公告'],
+					tabContents: ['新闻内容','通知内容','公告内容'],
+					currentItem: 0
+				},
+				methods: {
+					onClick: function(i){
+						this.currentItem = i;
+					}
+				}
+			});
+		</script>
 	</body>
+
 </html>
