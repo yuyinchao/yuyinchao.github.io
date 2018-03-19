@@ -103,12 +103,14 @@
 				},
 				methods: {
 					addItem: function() {
-						this.todos.push({
-							id: this.nextTodoId++,
-							title: this.newTodoText,
-							done:false,
-						});
-						this.newTodoText = '';
+						if(this.newTodoId !=""){
+							this.todos.push({
+								id: this.nextTodoId++,
+								title: this.newTodoText,
+								done:false,
+							});
+							this.newTodoText = '';
+						}
 					},
 					removeItem:function(i){
 						this.todos.splice(i, 1);
