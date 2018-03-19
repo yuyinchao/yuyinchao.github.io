@@ -93,23 +93,18 @@
 							title: '吃鸡',
 							done:false,
 						},
-						{
-							id: 3,
-							title: 'LOL',
-							done:true,
-						}
 					],
 					nextTodoId: 4
 				},
 				methods: {
 					addItem: function() {
-						if(this.newTodoId !=""){
+						if(this.newTodoText !=""){
 							this.todos.push({
-								id: this.nextTodoId++,
-								title: this.newTodoText,
-								done:false,
-							});
-							this.newTodoText = '';
+							id: this.nextTodoId++,
+							title: this.newTodoText,
+							done:false,
+						});
+						this.newTodoText = '';
 						}
 					},
 					removeItem:function(i){
